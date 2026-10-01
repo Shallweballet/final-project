@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #FFF7EC;
+  --bg-page-transparent: rgba(255, 247, 236, 0);
+  --bg-header: #FFF1DC;
+  --bg-center: #FFFFFF;
+
+  --accent-red: #E63946;
+  --accent-yellow: #FFD166;
+  --accent-green: #43AA8B;
+  --accent-blue: #2A9D8F;
+  --accent-pink: #F72585;
+
+  --text-dark: #1D3557;
+  --text-mid: #2B2D42;
+  --text-soft: #8D6E63;
+
+  --border-glow: rgba(255, 209, 102, 0.55);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-mid);
+  font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { color: var(--text-dark); }
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-page);
+}
+
+.main-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns:
+    clamp(160px, 14vw, 260px)
+    minmax(0, 1fr)
+    clamp(160px, 14vw, 260px);
+  gap: 0;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+.side-decor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-page);
+
+  background-image: url("./assets/animal-border.png");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center top;
+}
+
+.side-decor--right {
+  transform: scaleX(-1);
+}
+
+.side-decor::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-page) 0%,
+    var(--bg-page-transparent) 100%
+  );
+}
+
+.side-decor::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    var(--bg-page) 0%,
+    var(--bg-page-transparent) 100%
+  );
+}
+
+.center {
+  min-width: 0;
+  width: 100%;
+  background: var(--bg-center);
+  padding: 40px 32px;
+  box-shadow: 0 12px 32px rgba(29, 53, 87, 0.08);
+  border-left: 2px solid var(--border-glow);
+  border-right: 2px solid var(--border-glow);
+}
+
+.navbar {
+  background: var(--bg-header);
+  border-bottom: 3px solid var(--accent-yellow);
+  box-shadow: 0 4px 12px rgba(29, 53, 87, 0.05);
+}
+
+footer {
+  background: #2B2D42;
+  color: #E6E3DC;
+}
+
+@media (max-width: 1023px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-decor {
+    display: none;
+  }
+
+  .center {
+    padding: 28px 20px;
+    border-left: none;
+    border-right: none;
+  }
+}
