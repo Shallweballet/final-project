@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function VolunteersPage() {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -37,23 +40,22 @@ export default function VolunteersPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-black text-[#1D3557] mb-4 text-center">
-        Volunteer With Us 🤝
+        {t("volunteers.title")} 🤝
       </h1>
       <p className="text-center text-[#8D6E63] mb-12 max-w-2xl mx-auto">
-        Lend a hand, learn about animals, and help us make every kid's visit
-        unforgettable.
+        {t("volunteers.subtitle")}
       </p>
 
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-[#1D3557] mb-6">
-          What You'll Do
+          {t("volunteers.doTitle")}
         </h2>
         <ul className="grid sm:grid-cols-2 gap-4">
           {[
-            "Help feed and care for animals",
-            "Guide families on the zoo grounds",
-            "Teach kids about wildlife",
-            "Help at events and workshops"
+            t("volunteers.task1"),
+            t("volunteers.task2"),
+            t("volunteers.task4"),
+            t("volunteers.task6")
           ].map((task) => (
             <li
               key={task}
@@ -71,16 +73,28 @@ export default function VolunteersPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-[#1D3557] mb-6">
-          What We Ask
+          {t("volunteers.askTitle")}
         </h2>
         <div className="grid sm:grid-cols-3 gap-5">
           {[
-            { emoji: "🎂", title: "16 or Older", text: "Younger? Join our junior program." },
-            { emoji: "⏰", title: "4 Hours a Week", text: "Flexible shifts, mornings, afternoons or weekends." },
-            { emoji: "💛", title: "Love Animals", text: "No experience needed — we'll train you." }
+            {
+              emoji: "🎂",
+              titleKey: "volunteers.req1Title",
+              textKey: "volunteers.req1Text"
+            },
+            {
+              emoji: "⏰",
+              titleKey: "volunteers.req2Title",
+              textKey: "volunteers.req2Text"
+            },
+            {
+              emoji: "💛",
+              titleKey: "volunteers.req3Title",
+              textKey: "volunteers.req3Text"
+            }
           ].map((r) => (
             <div
-              key={r.title}
+              key={r.titleKey}
               className="
                 bg-white rounded-[18px] p-6 text-center
                 border-t-[6px] border-[#43AA8B]
@@ -90,8 +104,10 @@ export default function VolunteersPage() {
               "
             >
               <div className="text-4xl mb-3">{r.emoji}</div>
-              <h3 className="font-bold text-[#1D3557] mb-2">{r.title}</h3>
-              <p className="text-sm text-[#8D6E63]">{r.text}</p>
+              <h3 className="font-bold text-[#1D3557] mb-2">
+                {t(r.titleKey)}
+              </h3>
+              <p className="text-sm text-[#8D6E63]">{t(r.textKey)}</p>
             </div>
           ))}
         </div>
@@ -99,18 +115,18 @@ export default function VolunteersPage() {
 
       <section className="bg-[#FFF9F0] rounded-[18px] p-8 border-2 border-[#EEDFCB]">
         <h2 className="text-2xl font-bold text-[#1D3557] mb-6 text-center">
-          Sign Up
+          {t("volunteers.signupTitle")}
         </h2>
 
         {status === "success" && (
           <div className="mb-6 text-center bg-[#E9F7EF] border-2 border-[#43AA8B] text-[#1D3557] font-semibold px-4 py-3 rounded-xl">
-            Thanks! Your application was saved. 🐾
+            {t("volunteers.successMsg")}
           </div>
         )}
 
         {status === "error" && (
           <div className="mb-6 text-center bg-[#FDE8E8] border-2 border-[#E63946] text-[#1D3557] font-semibold px-4 py-3 rounded-xl">
-            Something went wrong. Please try again.
+            {t("volunteers.errorMsg")}
           </div>
         )}
 
@@ -120,7 +136,7 @@ export default function VolunteersPage() {
         >
           <input
             type="text"
-            placeholder="Your name"
+            placeholder={t("volunteers.formName")}
             required
             value={form.name}
             onChange={update("name")}
@@ -128,7 +144,7 @@ export default function VolunteersPage() {
           />
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("volunteers.formEmail")}
             required
             value={form.email}
             onChange={update("email")}
@@ -136,7 +152,7 @@ export default function VolunteersPage() {
           />
           <input
             type="tel"
-            placeholder="Phone (optional)"
+            placeholder={t("volunteers.formPhone")}
             value={form.phone}
             onChange={update("phone")}
             className="px-4 py-3 rounded-xl bg-white border-2 border-[#E0E0E0] focus:border-[#43AA8B] focus:outline-none"
@@ -146,13 +162,13 @@ export default function VolunteersPage() {
             onChange={update("shift")}
             className="px-4 py-3 rounded-xl bg-white border-2 border-[#E0E0E0] focus:border-[#43AA8B] focus:outline-none"
           >
-            <option value="">Preferred shift</option>
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Weekends only</option>
+            <option value="">{t("volunteers.formShift")}</option>
+            <option>{t("volunteers.formShiftMorning")}</option>
+            <option>{t("volunteers.formShiftAfternoon")}</option>
+            <option>{t("volunteers.formShiftWeekends")}</option>
           </select>
           <textarea
-            placeholder="Why do you want to volunteer?"
+            placeholder={t("volunteers.formMessage")}
             rows="4"
             value={form.message}
             onChange={update("message")}
@@ -171,7 +187,9 @@ export default function VolunteersPage() {
               disabled:opacity-60 disabled:cursor-not-allowed
             "
           >
-            {status === "sending" ? "Sending…" : "Send Your Application 🐾"}
+            {status === "sending"
+              ? t("volunteers.formSending")
+              : `${t("volunteers.formSubmit")} 🐾`}
           </button>
         </form>
       </section>

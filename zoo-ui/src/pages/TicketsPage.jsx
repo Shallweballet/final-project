@@ -1,14 +1,4 @@
-const ZOO_PRICES = [
-  { age: "Under 3", price: "Free", note: "Little ones enter free" },
-  { age: "3 – 12 years", price: "2 ₾", note: "Kids' price" },
-  { age: "12+ years", price: "4 ₾", note: "Standard admission" }
-];
-
-const EXOTARIUM_PRICES = [
-  { age: "Under 3", price: "Free", note: "Little ones enter free" },
-  { age: "3 – 12 years", price: "1 ₾", note: "Kids' price" },
-  { age: "12+ years", price: "2 ₾", note: "Standard admission" }
-];
+import { useTranslation } from "react-i18next";
 
 const TICKET_URL = "https://tkt.ge/event/267704/tbilisis-zooparki";
 
@@ -51,34 +41,44 @@ function PriceCard({ title, emoji, prices, accent }) {
 }
 
 export default function TicketsPage() {
+  const { t } = useTranslation();
+
+  const zooPrices = [
+    { age: t("tickets.under3"), price: t("tickets.free"), note: t("tickets.freeNote") },
+    { age: t("tickets.from3to12"), price: "2 ₾", note: t("tickets.kidsPrice") },
+    { age: t("tickets.over12"), price: "4 ₾", note: t("tickets.standardPrice") }
+  ];
+
+  const exotariumPrices = [
+    { age: t("tickets.under3"), price: t("tickets.free"), note: t("tickets.freeNote") },
+    { age: t("tickets.from3to12"), price: "1 ₾", note: t("tickets.kidsPrice") },
+    { age: t("tickets.over12"), price: "2 ₾", note: t("tickets.standardPrice") }
+  ];
+
   return (
     <div className="max-w-4xl mx-auto">
-      {/* Header */}
       <h1 className="text-4xl font-black text-[#1D3557] mb-4 text-center">
-        Tickets 🎟️
+        {t("tickets.title")} 🎟️
       </h1>
       <p className="text-center text-[#8D6E63] mb-12 max-w-2xl mx-auto">
-        Simple prices, happy visits. Buy online in seconds or grab your
-        ticket at the gate.
+        {t("tickets.subtitle")}
       </p>
 
-      {/* Two price cards */}
       <div className="grid sm:grid-cols-2 gap-6 mb-12">
         <PriceCard
-          title="Zoo Admission"
+          title={t("tickets.zooTitle")}
           emoji="🦁"
-          prices={ZOO_PRICES}
-          accent=" #58c2a2 "
+          prices={zooPrices}
+          accent="#58c2a2"
         />
         <PriceCard
-          title="Exotarium"
+          title={t("tickets.exotariumTitle")}
           emoji="🦎"
-          prices={EXOTARIUM_PRICES}
+          prices={exotariumPrices}
           accent="#ee5e6a"
         />
       </div>
 
-      {/* Free admission note */}
       <div
         className="
           bg-[#E9F7EF] border-2 border-[#43AA8B]
@@ -89,12 +89,10 @@ export default function TicketsPage() {
         <div className="text-3xl">💚</div>
         <div>
           <h3 className="font-bold text-[#1D3557] mb-1">
-            Free for those who need it most
+            {t("tickets.freeTitle")}
           </h3>
           <p className="text-sm text-[#2B2D42] leading-relaxed">
-            Entry to the zoo is <strong>free</strong> for socially vulnerable
-            persons and persons with disabilities. Please present the
-            relevant ID or certificate at the gate.
+            {t("tickets.freeText")}
           </p>
         </div>
       </div>
@@ -107,11 +105,10 @@ export default function TicketsPage() {
       >
         <div className="text-4xl mb-3">🎪</div>
         <h2 className="text-2xl font-bold text-[#1D3557] mb-3">
-          Buy Your Tickets Online
+          {t("tickets.buyTitle")}
         </h2>
         <p className="text-[#8D6E63] mb-6 max-w-lg mx-auto text-sm">
-          Skip the queue and reserve your spot in seconds. Tickets are also
-          available at the gate.
+          {t("tickets.buyText")}
         </p>
         <a
           href={TICKET_URL}
@@ -125,9 +122,8 @@ export default function TicketsPage() {
             active:translate-y-1 active:shadow-[0_2px_0_#b52b36]
           "
         >
-          Purchase the Ticket 🎟️
+          {t("tickets.buyButton")} 🎟️
         </a>
-        
       </div>
     </div>
   );

@@ -1,10 +1,13 @@
+import { useTranslation } from "react-i18next";
 import AnimalCard from "./AnimalCard";
 
 export default function AnimalGrid({ animals, loading, error }) {
+  const { t } = useTranslation();
+
   if (loading) {
     return (
       <div className="text-center py-16 text-[#8D6E63] font-semibold">
-        Loading animals… 🎈
+        {t("animals.loading")} 🎈
       </div>
     );
   }
@@ -12,7 +15,7 @@ export default function AnimalGrid({ animals, loading, error }) {
   if (error) {
     return (
       <div className="text-center py-16 text-[#E63946] font-semibold">
-        Oops! {error}
+        {t("animals.error")} {error}
       </div>
     );
   }
@@ -20,7 +23,7 @@ export default function AnimalGrid({ animals, loading, error }) {
   if (!animals.length) {
     return (
       <div className="text-center py-16 text-[#8D6E63] font-semibold">
-        No animals match those filters. Try something else! 🦓
+        {t("animals.noResults")} 🦓
       </div>
     );
   }

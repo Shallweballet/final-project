@@ -1,0 +1,300 @@
+{
+  "nav": {
+    "home": "Home",
+    "animals": "Animals",
+    "tickets": "Tickets",
+    "volunteers": "Volunteer"
+  },
+  "home": {
+    "heroTitle": "Welcome to Tbilisi Zoo",
+    "heroSubtitle": "A world of wonder, one animal at a time.",
+    "heroCta": "Meet the Animals",
+    "aboutTitle": "About Us",
+    "aboutText": "Tbilisi Zoo is a place where families, kids, and animal lovers come together to learn, laugh, and explore.",
+    "missionTitle": "Our Mission",
+    "missionText": "Our mission is to protect wildlife through education and conservation. We focus especially on the biodiversity of the Caucasus and on bringing endangered local species back from the brink. And through a space built for curiosity and play, we help every visitor fall in love with the animal world.",
+    "valuesTitle": "What We Believe",
+    "value1Title": "Care for Animals",
+    "value1Text": "Every animal here is rescued, protected, and loved.",
+    "value2Title": "Learn Through Play",
+    "value2Text": "We teach curiosity, not facts. Discovery first.",
+    "value3Title": "Family First",
+    "value3Text": "Everything we do is designed for kids and grown-ups.",
+    "teamTitle": "Our Team",
+    "director": "Tornike",
+    "roleDirector": "Zoo Director",
+    "education": "Marika",
+    "roleEducation": "Education Lead",
+    "caretaker": "Tsiala",
+    "roleCaretaker": "Animal Caretaker",
+    "healthcare": "Daviti",
+    "roleHealthcare": "Animal Healthcare"
+  },
+  "animals": {
+    "title": "Meet the Animals",
+    "searchPlaceholder": "Search for an animal…",
+    "zonesHeading": "Pick a Zone",
+    "clearAll": "Clear all",
+    "loading": "Loading animals…",
+    "noResults": "No animals match those filters. Try something else!",
+    "error": "Oops! Something went wrong.",
+    "hearSound": "Hear the {{name}}"
+  },
+  "filters": {
+    "diet": "Diet",
+    "habitat": "Habitat",
+    "continent": "Continent",
+    "size": "Size",
+    "dangerLevel": "Friendly?",
+    "all": "All"
+  },
+  "zones": {
+    "safari": "Safari",
+    "jungle": "Jungle",
+    "ocean": "Ocean",
+    "farm": "Farm",
+    "arctic": "Arctic",
+    "nocturnal": "Night",
+    "bugs": "Bugs",
+    "reptile": "Reptiles",
+    "birds": "Birds",
+    "grassland": "Grassland"
+  },
+  "tickets": {
+    "title": "Tickets",
+    "subtitle": "Simple prices, happy visits. Buy online in seconds or grab your ticket at the gate.",
+    "zooTitle": "Zoo Admission",
+    "exotariumTitle": "Exotarium",
+    "under3": "Under 3",
+    "from3to12": "3 – 12 years",
+    "over12": "12+ years",
+    "free": "Free",
+    "kidsPrice": "Kids' price",
+    "standardPrice": "Standard admission",
+    "freeNote": "Little ones enter free",
+    "freeTitle": "Free for those who need it most",
+    "freeText": "Entry to the zoo is free for socially vulnerable persons and persons with disabilities. Please present the relevant ID or certificate at the gate.",
+    "buyTitle": "Buy Your Tickets Online",
+    "buyText": "Skip the queue and reserve your spot in seconds. Tickets are also available at the gate.",
+    "buyButton": "Purchase the Ticket"
+  },
+  "volunteers": {
+    "title": "Volunteer With Us",
+    "subtitle": "Lend a hand, learn about animals, and help us make every kid's visit unforgettable.",
+    "doTitle": "What You'll Do",
+    "task1": "Help feed and care for animals",
+    "task2": "Guide groups on the zoo grounds",
+    "task4": "Teach kids about wildlife",
+    "task6": "Help at events and workshops",
+    "askTitle": "What We Ask",
+    "req1Title": "16 or Older",
+    "req1Text": "Younger? Join our junior program.",
+    "req2Title": "4 Hours a Week",
+    "req2Text": "Flexible shifts, mornings, afternoons or weekends.",
+    "req3Title": "Love Animals",
+    "req3Text": "No experience needed — we'll train you.",
+    "signupTitle": "Sign Up",
+    "successMsg": "Thanks! Your application was saved. 🐾",
+    "errorMsg": "Something went wrong. Please try again.",
+    "formName": "Your name",
+    "formEmail": "Email",
+    "formPhone": "Phone (optional)",
+    "formShift": "Preferred shift",
+    "formShiftMorning": "Morning",
+    "formShiftAfternoon": "Afternoon",
+    "formShiftWeekends": "Weekends only",
+    "formMessage": "Why do you want to volunteer?",
+    "formSubmit": "Send Application 🐾",
+    "formSending": "Sending…"
+  },
+  "footer": {
+    "tagline": "Visit us at the Tbilisi Zoo — a world of wonder, one animal at a time.",
+    "addressLabel": "Address:",
+    "address": "Tbilisi Zoo, Tbilisi, Georgia",
+    "hoursLabel": "Hours:",
+    "hours": "Every day, 10:00 – 20:00",
+    "emailLabel": "Email:",
+    "home": "Home",
+    "animals": "Animals",
+    "directions": "Get Directions",
+    "copyright": "© {{year}} Tbilisi Zoo. All rights reserved.",
+    "madeWith": "Made with love and joy in Tbilisi 🎈"
+  },
+  "filterValues": {
+  "Arctic": "Arctic",
+  "Forest": "Forest",
+  "Freshwater": "Freshwater",
+  "Grassland": "Grassland",
+  "Ocean": "Ocean",
+  "Rainforest": "Rainforest",
+  "Savanna": "Savanna",
+  "Africa": "Africa",
+  "Asia": "Asia",
+  "Europe": "Europe",
+  "North America": "North America",
+  "South America": "South America",
+  "Antarctica": "Antarctica",
+  "Worldwide": "Worldwide",
+  "Tiny": "Tiny",
+  "Small": "Small",
+  "Medium": "Medium",
+  "Large": "Large",
+  "Giant": "Giant",
+  "Herbivore": "Herbivore",
+  "Carnivore": "Carnivore",
+  "Omnivore": "Omnivore",
+  "Safe to watch": "Safe to watch",
+  "Keep distance": "Keep distance",
+  "Behind glass": "Behind glass",
+  "Mammal": "Mammal",
+  "Bird": "Bird",
+  "Fish": "Fish",
+  "Mollusk": "Mollusk",
+  "Insect": "Insect",
+  "Arachnid": "Arachnid",
+  "Reptile": "Reptile",
+  "Amphibian": "Amphibian"
+  },
+  "animalData": {
+  "zebra-001": {
+    "name": "Zebra",
+    "species": "Plains Zebra",
+    "kidFact": "Zebras have black and white stripes — no two are the same!"
+  },
+  "lion-001": {
+    "name": "Lion",
+    "species": "African Lion",
+    "kidFact": "A lion's roar can be heard from 5 miles away!"
+  },
+  "giraffe-001": {
+    "name": "Giraffe",
+    "species": "Reticulated Giraffe",
+    "kidFact": "A giraffe's neck has the same number of bones as yours — just seven!"
+  },
+  "elephant-001": {
+    "name": "Elephant",
+    "species": "African Elephant",
+    "kidFact": "Elephants can smell water from 12 miles away!"
+  },
+  "rhino-001": {
+    "name": "Rhinoceros",
+    "species": "White Rhino",
+    "kidFact": "A rhino's horn is made of keratin — the same stuff as your hair!"
+  },
+  "tiger-001": {
+    "name": "Tiger",
+    "species": "Bengal Tiger",
+    "kidFact": "Every tiger has a unique stripe pattern, like a fingerprint!"
+  },
+  "monkey-001": {
+    "name": "Monkey",
+    "species": "Capuchin Monkey",
+    "kidFact": "Monkeys use tools — some even use rocks to crack nuts!"
+  },
+  "parrot-001": {
+    "name": "Parrot",
+    "species": "Macaw",
+    "kidFact": "Some parrots can learn over 100 words!"
+  },
+  "dolphin-001": {
+    "name": "Dolphin",
+    "species": "Bottlenose Dolphin",
+    "kidFact": "Dolphins sleep with one eye open — half their brain stays awake!"
+  },
+  "shark-001": {
+    "name": "Shark",
+    "species": "Great White Shark",
+    "kidFact": "Sharks existed before trees did — over 400 million years!"
+  },
+  "octopus-001": {
+    "name": "Octopus",
+    "species": "Common Octopus",
+    "kidFact": "Octopuses have three hearts and blue blood!"
+  },
+  "cow-001": {
+    "name": "Cow",
+    "species": "Holstein Cow",
+    "kidFact": "Cows have best friends and get stressed when separated!"
+  },
+  "pig-001": {
+    "name": "Pig",
+    "species": "Domestic Pig",
+    "kidFact": "Pigs are smarter than dogs and can learn tricks!"
+  },
+  "chicken-001": {
+    "name": "Chicken",
+    "species": "Domestic Chicken",
+    "kidFact": "Chickens can recognize over 100 different faces!"
+  },
+  "polar-bear-001": {
+    "name": "Polar Bear",
+    "species": "Polar Bear",
+    "kidFact": "Polar bear fur isn't white — it's transparent and reflects light!"
+  },
+  "penguin-001": {
+    "name": "Penguin",
+    "species": "Emperor Penguin",
+    "kidFact": "Penguins propose to their mates with a pebble!"
+  },
+  "arctic-fox-001": {
+    "name": "Arctic Fox",
+    "species": "Arctic Fox",
+    "kidFact": "Arctic foxes change color — white in winter, brown in summer!"
+  },
+  "owl-001": {
+    "name": "Owl",
+    "species": "Barn Owl",
+    "kidFact": "Owls can rotate their heads 270 degrees!"
+  },
+  "bat-001": {
+    "name": "Bat",
+    "species": "Fruit Bat",
+    "kidFact": "Bats are the only mammals that can truly fly!"
+  },
+  "raccoon-001": {
+    "name": "Raccoon",
+    "species": "Common Raccoon",
+    "kidFact": "Raccoons wash their food before eating it!"
+  },
+  "butterfly-001": {
+    "name": "Butterfly",
+    "species": "Monarch Butterfly",
+    "kidFact": "Butterflies taste with their feet!"
+  },
+  "spider-001": {
+    "name": "Spider",
+    "species": "Tarantula",
+    "kidFact": "Spiders have eight legs and can regrow them if lost!"
+  },
+  "crocodile-001": {
+    "name": "Crocodile",
+    "species": "Nile Crocodile",
+    "kidFact": "Crocodiles can't chew — they swallow their food whole!"
+  },
+  "frog-001": {
+    "name": "Frog",
+    "species": "Red-Eyed Tree Frog",
+    "kidFact": "Frogs absorb water through their skin — no need to drink!"
+  },
+  "turtle-001": {
+    "name": "Turtle",
+    "species": "Green Sea Turtle",
+    "kidFact": "Some turtles can live over 150 years!"
+  },
+  "eagle-001": {
+    "name": "Eagle",
+    "species": "Bald Eagle",
+    "kidFact": "Eagles can spot a rabbit from over a mile away!"
+  },
+  "flamingo-001": {
+    "name": "Flamingo",
+    "species": "American Flamingo",
+    "kidFact": "Flamingos are pink because of the shrimp they eat!"
+  },
+  "peacock-001": {
+    "name": "Peacock",
+    "species": "Indian Peafowl",
+    "kidFact": "A peacock's tail can have over 200 colorful feathers!"
+  }
+}
+}

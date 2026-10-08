@@ -1,28 +1,32 @@
+import { useTranslation } from "react-i18next";
+
 const ZONES = [
-  { id: "safari", label: "Safari", emoji: "🦁", color: "#FFD166" },
-  { id: "jungle", label: "Jungle", emoji: "🌴", color: "#43AA8B" },
-  { id: "ocean", label: "Ocean", emoji: "🌊", color: "#2A9D8F" },
-  { id: "farm", label: "Farm", emoji: "🐄", color: "#F4A261" },
-  { id: "arctic", label: "Arctic", emoji: "❄️", color: "#A8DADC" },
-  { id: "nocturnal", label: "Night", emoji: "🌙", color: "#1D3557" },
-  { id: "bugs", label: "Bugs", emoji: "🐛", color: "#7EC850" },
-  { id: "reptile", label: "Reptiles", emoji: "🦎", color: "#8D6E63" },
-  { id: "birds", label: "Birds", emoji: "🦅", color: "#F72585" }
+  { id: "safari", emoji: "🦁", color: "#FFD166" },
+  { id: "jungle", emoji: "🌴", color: "#43AA8B" },
+  { id: "ocean", emoji: "🌊", color: "#2A9D8F" },
+  { id: "farm", emoji: "🐄", color: "#F4A261" },
+  { id: "arctic", emoji: "❄️", color: "#A8DADC" },
+  { id: "nocturnal", emoji: "🌙", color: "#1D3557" },
+  { id: "bugs", emoji: "🐛", color: "#7EC850" },
+  { id: "reptile", emoji: "🦎", color: "#8D6E63" },
+  { id: "birds", emoji: "🦅", color: "#F72585" }
 ];
 
 export default function ZoneFilters({ selected, onToggle, onClear }) {
+  const { t } = useTranslation();
+
   return (
     <div className="mb-8">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-[#1D3557]">
-          Pick a Zone 🎪
+          {t("animals.zonesHeading")} 🎪
         </h2>
         {selected.length > 0 && (
           <button
             onClick={onClear}
             className="text-sm font-semibold text-[#E63946] hover:underline"
           >
-            Clear all
+            {t("animals.clearAll")}
           </button>
         )}
       </div>
@@ -46,7 +50,7 @@ export default function ZoneFilters({ selected, onToggle, onClear }) {
               style={isActive ? { backgroundColor: zone.color } : {}}
             >
               <span className="text-lg">{zone.emoji}</span>
-              <span>{zone.label}</span>
+              <span>{t(`zones.${zone.id}`)}</span>
             </button>
           );
         })}

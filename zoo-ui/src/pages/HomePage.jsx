@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center py-8 mb-16">
         <h1 className="text-5xl font-black text-[#1D3557] mb-4">
-          Welcome to Tbilisi Zoo 🎪
+          {t("home.heroTitle")} 🎪
         </h1>
         <p className="text-[#8D6E63] max-w-xl mx-auto mb-8 text-lg">
-          A world of wonder, one animal at a time.
+          {t("home.heroSubtitle")}
         </p>
         <Link
           to="/animals"
@@ -19,55 +22,40 @@ export default function HomePage() {
             transition-all
           "
         >
-          Meet the Animals →
+          {t("home.heroCta")} →
         </Link>
       </div>
 
       <section className="mb-10 text-center">
         <h2 className="text-3xl font-black text-[#1D3557] mb-6">
-          About Us 🎪
+          {t("home.aboutTitle")} 🎪
         </h2>
         <p className="text-[#8D6E63] max-w-2xl mx-auto">
-          Tbilisi Zoo is a place where families, kids, and animal lovers come
-          together to learn, laugh, and explore.
+          {t("home.aboutText")}
         </p>
       </section>
 
-      {/* Our Story */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-[#1D3557] mb-4">
-          Our Story
+          {t("home.missionTitle")}
         </h2>
         <p className="text-[#2B2D42] leading-relaxed mb-4">
-          Our mission is to protect wildlife through education and conservation. We focus especially on the biodiversity of the Caucasus and on bringing endangered local species back from the brink. And through a space built for curiosity and play, we help every visitor fall in love with the animal world.
+          {t("home.missionText")}
         </p>
       </section>
 
-      {/* What We Believe */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-[#1D3557] mb-6">
-          What We Believe
+          {t("home.valuesTitle")}
         </h2>
         <div className="grid sm:grid-cols-3 gap-5">
           {[
-            {
-              emoji: "🌱",
-              title: "Care for Animals",
-              text: "Every animal here is rescued, protected, and loved."
-            },
-            {
-              emoji: "🎓",
-              title: "Learn Through Play",
-              text: "We teach curiosity, not facts. Discovery first."
-            },
-            {
-              emoji: "👨‍👩‍👧",
-              title: "Family First",
-              text: "Everything we do is designed for kids and grown-ups."
-            }
+            { emoji: "🌱", titleKey: "home.value1Title", textKey: "home.value1Text" },
+            { emoji: "🎓", titleKey: "home.value2Title", textKey: "home.value2Text" },
+            { emoji: "👨‍👩‍👧", titleKey: "home.value3Title", textKey: "home.value3Text" }
           ].map((v) => (
             <div
-              key={v.title}
+              key={v.titleKey}
               className="
                 bg-white rounded-[18px] p-6
                 border-t-[6px] border-[#FFD166]
@@ -78,28 +66,27 @@ export default function HomePage() {
             >
               <div className="text-4xl mb-3">{v.emoji}</div>
               <h3 className="text-lg font-bold text-[#1D3557] mb-2">
-                {v.title}
+                {t(v.titleKey)}
               </h3>
-              <p className="text-sm text-[#8D6E63]">{v.text}</p>
+              <p className="text-sm text-[#8D6E63]">{t(v.textKey)}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Our Team */}
       <section>
         <h2 className="text-2xl font-bold text-[#1D3557] mb-6">
-          Our Team
+          {t("home.teamTitle")}
         </h2>
         <div className="grid sm:grid-cols-2 gap-5">
           {[
-            { emoji: "👨‍💼", name: "Tornike", role: "Zoo Director" },
-            { emoji: "👩‍🏫", name: "Marika", role: "Education Lead" },
-            { emoji: "👩‍🌾", name: "Tsiala", role: "Animal Caretaker" },
-            { emoji: "👨‍⚕️", name: "Daviti", role: "Animal Healthcare" }
+            { emoji: "👨‍💼", nameKey: "home.director", roleKey: "home.roleDirector" },
+            { emoji: "👩‍🏫", nameKey: "home.education", roleKey: "home.roleEducation" },
+            { emoji: "👩‍🌾", nameKey: "home.caretaker", roleKey: "home.roleCaretaker" },
+            { emoji: "👨‍⚕️", nameKey: "home.healthcare", roleKey: "home.roleHealthcare" }
           ].map((p) => (
             <div
-              key={p.name}
+              key={p.nameKey}
               className="
                 bg-[#FFF9F0] rounded-[18px] p-5
                 flex items-center gap-4
@@ -108,8 +95,8 @@ export default function HomePage() {
             >
               <div className="text-4xl">{p.emoji}</div>
               <div>
-                <h3 className="font-bold text-[#1D3557]">{p.name}</h3>
-                <p className="text-xs text-[#8D6E63]">{p.role}</p>
+                <h3 className="font-bold text-[#1D3557]">{t(p.nameKey)}</h3>
+                <p className="text-xs text-[#8D6E63]">{t(p.roleKey)}</p>
               </div>
             </div>
           ))}

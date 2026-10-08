@@ -1,20 +1,23 @@
+import { useTranslation } from "react-i18next";
+
 const SELECTS = [
-  { key: "diet", label: "Diet" },
-  { key: "habitat", label: "Habitat" },
-  { key: "continent", label: "Continent" },
-  { key: "size", label: "Size" },
-  { key: "dangerLevel", label: "Friendly?" }
+  { key: "diet", labelKey: "filters.diet" },
+  { key: "habitat", labelKey: "filters.habitat" },
+  { key: "continent", labelKey: "filters.continent" },
+  { key: "size", labelKey: "filters.size" },
+  { key: "dangerLevel", labelKey: "filters.dangerLevel" }
 ];
 
 export default function TaxonomyFilters({ options, values, onChange }) {
+  const { t } = useTranslation();
   if (!options) return null;
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-      {SELECTS.map(({ key, label }) => (
+      {SELECTS.map(({ key, labelKey }) => (
         <div key={key}>
           <label className="block text-xs font-bold uppercase tracking-wide text-[#8D6E63] mb-1.5">
-            {label}
+            {t(labelKey)}
           </label>
           <select
             value={values[key] || ""}
@@ -26,10 +29,10 @@ export default function TaxonomyFilters({ options, values, onChange }) {
               transition-colors
             "
           >
-            <option value="">All</option>
+            <option value="">{t("filters.all")}</option>
             {(options[key + "s"] || options[key] || []).map((opt) => (
               <option key={opt} value={opt}>
-                {opt}
+                {t(`filterValues.${opt}`, opt)}
               </option>
             ))}
           </select>
